@@ -1,0 +1,1 @@
+kluc_openai = "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"
