@@ -1,5 +1,6 @@
 import pytest
 
+
 from whisper.normalizers import EnglishTextNormalizer
 from whisper.normalizers.english import (
     EnglishNumberNormalizer,

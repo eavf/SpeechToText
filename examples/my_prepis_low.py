@@ -3,8 +3,7 @@ import whisper
 import math
 from porovnaj_TXT import *
 
-
-#os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
+os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
 """
 Ešte má muchy, treba sa pohrať s overlaping....
@@ -12,6 +11,7 @@ Ešte má muchy, treba sa pohrať s overlaping....
 """
 
 import torch
+
 
 def chunk_audio(aud, chunk_length_sec=30, overlap_sec=5, sample_rate=16000):
     chunk_size = chunk_length_sec * sample_rate
@@ -33,13 +33,12 @@ def chunk_audio(aud, chunk_length_sec=30, overlap_sec=5, sample_rate=16000):
             break
 
 
-
-#model = whisper.load_model("base", device="cpu")
+# model = whisper.load_model("base", device="cpu")
 model = whisper.load_model("base")
 
 audio_path = os.path.join(os.path.dirname(__file__), "../data/EarningsCall.wav")
 audio = whisper.load_audio(audio_path)
-#audio = whisper.pad_or_trim(audio)  # Optional, based on your audio length
+# audio = whisper.pad_or_trim(audio)  # Optional, based on your audio length
 
 full_transcript = ""
 for chunk in chunk_audio(audio):
@@ -49,7 +48,7 @@ for chunk in chunk_audio(audio):
     options = whisper.DecodingOptions()
     result = whisper.decode(model, mel, options)
 
-    #print(result.text)
+    # print(result.text)
     full_transcript += result.text + " "
 
 compare_strings(full_transcript, transpis())
