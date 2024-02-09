@@ -6,6 +6,7 @@
       <excludeFolder url="file://$MODULE_DIR$/venv" />
       <excludeFolder url="file://$MODULE_DIR$/base" />
       <excludeFolder url="file://$MODULE_DIR$/base_spttx" />
+      <excludeFolder url="file://$MODULE_DIR$/venv_STT" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.11 (SpeechToText)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
